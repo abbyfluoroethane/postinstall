@@ -31,17 +31,20 @@ echo "flatpaks"
 echo "extensions"
 {
     echo '# GNOME extensions installed from extensions.gnome.org. One UUID per line.'
-    gsettings get org.gnome.shell enabled-extensions | tr -d "[]',@as" | tr ' ' '\n' | while read -r uuid; do
-        [[ -n "$uuid" && -d "$HOME/.local/share/gnome-shell/extensions/$uuid" ]] && echo "$uuid"
+    gsettings get org.gnome.shell enabled-extensions | python3 -I -c '
+import ast, sys
+s = sys.stdin.read().strip().removeprefix("@as ")
+print("\n".join(ast.literal_eval(s)))' | while read -r uuid; do
+        if [[ -n "$uuid" && -d "$HOME/.local/share/gnome-shell/extensions/$uuid" ]]; then echo "$uuid"; fi
     done
 } > config/extensions.txt
 
 echo "files"
 (cd files/home && find . -type f) | while read -r f; do
-    [[ -f "$HOME/${f#./}" ]] && cp "$HOME/${f#./}" "files/home/$f"
+    if [[ -f "$HOME/${f#./}" ]]; then cp "$HOME/${f#./}" "files/home/$f"; fi
 done
 (cd files/etc && find . -type f) | while read -r f; do
-    [[ -f "/etc/${f#./}" ]] && cp "/etc/${f#./}" "files/etc/$f"
+    if [[ -f "/etc/${f#./}" ]]; then cp "/etc/${f#./}" "files/etc/$f"; fi
 done
 
 echo

@@ -1,4 +1,5 @@
 [Default Applications]
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
 x-scheme-handler/http=app.zen_browser.zen.desktop
 application/xhtml+xml=app.zen_browser.zen.desktop
 text/html=app.zen_browser.zen.desktop
