@@ -1,0 +1,3 @@
+# Packages layered with rpm-ostree. One per line.
+ghostty
+gnome-rounded-blur

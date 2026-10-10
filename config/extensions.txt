@@ -1,0 +1,4 @@
+# GNOME extensions installed from extensions.gnome.org. One UUID per line.
+dash-to-dock@micxgx.gmail.com
+blur-my-shell@aunetx
+user-theme@gnome-shell-extensions.gcampax.github.com

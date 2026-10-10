@@ -1,0 +1,8 @@
+# Flatpak apps: <remote> <app-id>. Fedora-preinstalled apps are not listed.
+flathub app.zen_browser.zen
+flathub com.collaboraoffice.Office
+flathub com.github.wwmm.easyeffects
+flathub com.mattjakeman.ExtensionManager
+flathub com.vscodium.codium
+flathub io.github.shiftey.Desktop
+flathub page.tesk.Refine
