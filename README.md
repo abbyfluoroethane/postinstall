@@ -56,3 +56,11 @@ git commit -am "..."
 - The touchpad plugin (`files/etc/libinput/plugins/10-touchpad-scroll-speed.lua`)
   slows two-finger scrolling. Change `FACTOR` to tune it, then run
   `./setup.sh etc` and log out and back in.
+
+## Licenses
+
+The scripts and config in this repo are MIT (see `LICENSE`). Bundled
+third-party files keep their own licenses:
+
+- `assets/fonts/selawik/`: Selawik by Microsoft, SIL Open Font License 1.1 (`LICENSE.txt` in that folder).
+- `assets/themes/`: Catppuccin-GTK-Theme by Fausto-Korpsvart, GPL-3.0 (`LICENSE` and `README.md` in that folder).
